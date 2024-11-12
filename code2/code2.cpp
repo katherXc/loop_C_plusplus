@@ -19,7 +19,6 @@ int main()
 	}
 	cout << "For loop: 1~" << n << "之間所有偶數的和為: " << sum << endl;
 
-	// while loop
 	int i = 1;
 	sum = 0;
 	while (i <= n) {
