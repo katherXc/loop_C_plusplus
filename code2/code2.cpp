@@ -1,21 +1,40 @@
-﻿#include <iostream>
+﻿﻿#include <iostream>
 using namespace std;
 
-int main() {
-	int month;
-	cout << "輸入月份 (1月到12月)";
-	cin >> month;
+int main()
+{
+	int n = 1;
+	int sum = 0;
+	cout << "請輸入一個正整數n: ";
+	cin >> n;
 
-	if (month >= 3 && month <= 5) {
-		cout << "美好的春天";
+	// for loop
+	for (int i = 1; i <= n; i++) {
+		if (i % 2 == 0) sum += i;
 	}
-	else if (month >= 6 && month <= 8) {
-		cout << "炎熱的夏天";
+
+	sum = 0;
+	for (int i = 2; i <= n; i += 2) {
+		sum += i;
 	}
-	else if (month >= 9 && month <= 11) {
-		cout << "涼爽的秋天";
+	cout << "For loop: 1~" << n << "之間所有偶數的和為: " << sum << endl;
+
+	// while loop
+	int i = 1;
+	sum = 0;
+	while (i <= n) {
+		if (i % 2 == 0) sum += i;
+		i++;
 	}
-	else if (month == 12 || month == 2 || month == 1) {
-		cout << "寒冷的冬天";
-	}
+	cout << "While loop: 1~" << n << "之間所有偶數的和為: " << sum << endl;
+
+	// do-while loop
+	i = 2;
+	sum = 0;
+	do {
+		sum += i;
+		i += 2;
+	} while (i <= n);
+	cout << "Do-While loop: 1~" << n << "之間所有偶數的和為: " << sum << endl;
+
 }
