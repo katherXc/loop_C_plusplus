@@ -8,30 +8,30 @@ int main()
     cout << "請輸入一個正整數n: ";
     cin >> n;
 
-    // 使用 for 迴圈
-    sum = 0;
+    // for loop
     for (int i = 2; i <= n; i += 2) {
         sum += i;
     }
-    cout << "For 迴圈: 小於等於 " << n << " 的所有偶數和為: " << sum << endl;
+    cout << "For loop: 1~" << n << "之間所有偶數的和為: " << sum << endl;
 
-    // 使用 while 迴圈
+    // while loop
     int i = 2;
     sum = 0;
     while (i <= n) {
         sum += i;
         i += 2;
     }
-    cout << "While 迴圈: 小於等於 " << n << " 的所有偶數和為: " << sum << endl;
+    cout << "While loop: 1~" << n << "之間所有偶數的和為: " << sum << endl;
 
-    // 使用 do-while 迴圈
+    // do-while loop
     i = 2;
     sum = 0;
     do {
+        if (i > n) break;
         sum += i;
         i += 2;
     } while (i <= n);
-    cout << "Do-While 迴圈: 小於等於 " << n << " 的所有偶數和為: " << sum << endl;
+    cout << "Do-While loop: 1~" << n << "之間所有偶數的和為: " << sum << endl;
 
     return 0;
 }
