@@ -1,37 +1,29 @@
 ﻿#include <iostream>
 using namespace std;
 
+int factorial(int n) {
+    if (n == 0) return 1;
+    else return n * factorial(n - 1);
+}
+
 int main()
 {
-    int n = 1;
-    int sum = 0;
-    cout << "請輸入一個正整數n: ";
-    cin >> n;
+    int num;
 
-    // for loop
-    for (int i = 2; i <= n; i += 2) {
-        sum += i;
+    cout << "輸入一個正整數: ";
+    cin >> num;
+
+    // 非遞迴計算n!
+    int result = 1;
+    for (int i = 1; i <= num; i++)
+    {
+        result *= i;
     }
-    cout << "For loop: 1~" << n << "之間所有偶數的和為: " << sum << endl;
+    cout << "非遞迴版本：" << num << "! = " << result << endl;
 
-    // while loop
-    int i = 2;
-    sum = 0;
-    while (i <= n) {
-        sum += i;
-        i += 2;
-    }
-    cout << "While loop: 1~" << n << "之間所有偶數的和為: " << sum << endl;
-
-    // do-while loop
-    i = 2;
-    sum = 0;
-    do {
-        if (i > n) break;
-        sum += i;
-        i += 2;
-    } while (i <= n);
-    cout << "Do-While loop: 1~" << n << "之間所有偶數的和為: " << sum << endl;
+    // 遞迴計算n!
+    result = factorial(num);
+    cout << "遞迴版本：" << num << "! = " << result << endl;
 
     return 0;
 }
